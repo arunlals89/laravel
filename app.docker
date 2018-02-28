@@ -1,0 +1,10 @@
+FROM ubuntu
+
+#RUN apt-get update && apt-get install -y libmcrypt-dev mysql-client \
+#    && docker-php-ext-install mcrypt pdo_mysql
+
+
+RUN apt-get install -y software-properties-common python-software-properties && apt-add-repository ppa:ondrej/php && apt-get update && apt-get install zip unzip && apt-get install -y php7.0 php7.0-fpm php7.0-mysql php7.0-zip php7.0-gd && apt-get install nginx git
+
+
+WORKDIR /var/www/laravel
